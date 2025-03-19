@@ -87,15 +87,6 @@
 
 
     public function create() {
-      // Decode data as an array to check for missing params
-      $data = json_decode(file_get_contents("php://input"), true);
-
-      // If parameters are missing...
-      if (!isset($data['category'])) {
-        echo json_encode(['message' => 'Missing Required Parameters']);
-        exit;
-      }
-
       $query = 'INSERT INTO ' . $this->table . ' (category) VALUES (:category)';
 
       // Prepare Statement

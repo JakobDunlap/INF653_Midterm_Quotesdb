@@ -237,7 +237,7 @@
 
       // Given quote id does not exist, error out
       if (!$quote) {
-        echo json_encode(['message' => 'No Quote Found']);
+        echo json_encode(['message' => 'No Quotes Found']);
         exit();
       }
 
@@ -253,7 +253,7 @@
 
       // Given author id does not exist, error out
       if (!$author) {
-        echo json_encode(['message' => 'No Author Found']);
+        echo json_encode(['message' => 'author_id Not Found']);
         exit();
       }
 
@@ -269,22 +269,8 @@
 
       // Given category id does not exist, error out
       if (!$category) {
-        echo json_encode(['message' => 'No Category Found']);
+        echo json_encode(['message' => 'category_id Not Found']);
         exit();
-      }
-
-      if (!isset($data['quote'])) {
-        echo json_encode(['message' => 'Error: No quote provided']);
-        exit;
-      }
-
-      if (!isset($data['author_id'])) {
-        echo json_encode(['message' => 'Error: No author_id provided']);
-        exit;
-      }
-      if (!isset($data['category_id'])) {
-        echo json_encode(['message' => 'Error: No category_id provided']);
-        exit;
       }
 
       // Create query
