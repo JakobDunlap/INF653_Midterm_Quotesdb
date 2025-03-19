@@ -12,6 +12,7 @@
       $this->password = getenv('PASSWORD');
       $this->db_name = getenv('DBNAME');
       $this->host = getenv('HOST');
+      // $this->port = getenv('PORT');
     }
     
     // DB Connect
@@ -19,6 +20,7 @@
       if ($this->conn) {
         return $this->conn;
       } else {
+        // $dsn = "pgsql:host={$this->host};port={$this->port};dbname={$this->db_name}";
         $dsn = "pgsql:host={$this->host};dbname={$this->db_name}";
 
         try {
