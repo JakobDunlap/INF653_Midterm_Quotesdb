@@ -52,7 +52,7 @@
       
       //Given category id does not exist, error out
       if (!$category) {
-        echo json_encode(['message' => 'No Category Found']);
+        echo json_encode(['message' => 'category_id Not Found']);
         exit();
       }
       
@@ -110,8 +110,7 @@
       // Execute query
       if($stmt->execute()) {
         echo json_encode(
-          array('message' => 'Created Category', 
-                'id' => $this->conn->lastInsertId())
+          array('id' => $this->conn->lastInsertId())
         );
         return true;
       }

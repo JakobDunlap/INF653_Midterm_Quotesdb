@@ -12,6 +12,7 @@
   // Instantiate category object
   $category = new Category($db);
 
+  // Decode data as an array to check for missing params
   $inputdata = json_decode(file_get_contents("php://input"), true);
 
   // If parameters are missing...

@@ -13,10 +13,10 @@
   $quote = new Quote($db);
 
   // Decode data as an array to check for missing params
-  $data = json_decode(file_get_contents("php://input"), true);
+  $inputdata = json_decode(file_get_contents("php://input"), true);
 
   // If parameters are missing...
-  if (!isset($data['quote'], $data['author_id'], $data['category_id'])) {
+  if (!isset($inputdata['quote'], $inputdata['author_id'], $inputdata['category_id'])) {
     echo json_encode(['message' => 'Missing Required Parameters']);
     exit;
   }

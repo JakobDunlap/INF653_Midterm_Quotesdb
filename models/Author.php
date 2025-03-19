@@ -52,7 +52,7 @@
     
       //Given author id does not exist, error out
       if (!$author) {
-        echo json_encode(['message' => 'No Author Found']);
+        echo json_encode(['message' => 'author_id Not Found']);
         exit();
       }
 
@@ -110,8 +110,7 @@
       // Execute query
       if($stmt->execute()) {
         echo json_encode(
-          array('message' => 'Author Created', 
-                'id' => $this->conn->lastInsertId())
+          array('id' => $this->conn->lastInsertId())
         );
         return true;
       }

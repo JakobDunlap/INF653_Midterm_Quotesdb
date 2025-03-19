@@ -194,8 +194,7 @@
       if($stmt->execute()) {
         // If successful, print details
         echo json_encode(
-          array('message' => 'Created Quote', 
-                'id' => $this->conn->lastInsertId(), 
+          array('id' => $this->conn->lastInsertId(), 
                 'quote' => $this->quote,
                 'author_id' => $this->author_id,
                 'category_id' => $this->category_id)
