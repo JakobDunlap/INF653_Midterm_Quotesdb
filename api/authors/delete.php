@@ -4,6 +4,7 @@
 
   include_once '../../config/Database.php';
   include_once '../../models/Author.php';
+  
 
   // Instantiate DB & connect
   $database = new Database();
@@ -23,7 +24,7 @@
   // Delete author
   if($author->delete()) {
     echo json_encode(
-      array('message' => 'Author ' . $data['id'] . ' deleted')
+      array('id' => $data['id'])
     );
   } else {
     echo json_encode(

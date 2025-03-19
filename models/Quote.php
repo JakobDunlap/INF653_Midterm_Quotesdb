@@ -333,7 +333,7 @@
 
       // Given quote id does not exist, error out
       if (!$quote) {
-        echo json_encode(['message' => 'No Quote Found']);
+        echo json_encode(['message' => 'No Quotes Found']);
         exit();
       }
 
@@ -354,7 +354,7 @@
 
       // Check that a deletion has actually taken place
       if ($stmt->rowCount() > 0) {
-        echo json_encode(['message' => 'Quote ' . $this->id . ' Deleted']);
+        echo json_encode(['id' => $this->id]);
         return true;
       } else if ($stmt->rowCount() === 0) {
         // Row count is 0 -> no deletion has taken place
