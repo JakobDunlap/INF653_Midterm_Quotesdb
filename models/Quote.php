@@ -107,7 +107,7 @@
       
       //Given quote id does not exist, error out
       if (!$quote) {
-        echo json_encode(['message' => 'No Quote Found']);
+        echo json_encode(['message' => 'No Quotes Found']);
         exit();
       }
       

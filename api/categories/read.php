@@ -18,23 +18,23 @@
   // Check if any categories
   if($num > 0) {
         // Cat array
-        $cat_arr = array();
-        $cat_arr['data'] = array();
+        $categories_arr = array();
+        // $categories_arr['data'] = array();
 
         while($row = $result->fetch(PDO::FETCH_ASSOC)) {
           extract($row);
 
-          $cat_item = array(
+          $category_item = array(
             'id' => $id,
             'category' => $category
           );
 
           // Push to "data"
-          array_push($cat_arr['data'], $cat_item);
+          array_push($categories_arr, $category_item);
         }
 
         // Turn to JSON & output
-        echo json_encode($cat_arr);
+        echo json_encode($categories_arr);
 
   } else {
         // No Categories

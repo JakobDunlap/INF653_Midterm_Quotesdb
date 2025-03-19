@@ -18,23 +18,23 @@
   // Check if any authors
   if($num > 0) {
     // Cat array
-    $cat_arr = array();
-    $cat_arr['data'] = array();
+    $authors_arr = array();
+    // $authors_arr['data'] = array();
 
     while($row = $result->fetch(PDO::FETCH_ASSOC)) {
       extract($row);
 
-      $cat_item = array(
+      $author_item = array(
         'id' => $id,
         'author' => $author
       );
 
       // Push to "data"
-      array_push($cat_arr['data'], $cat_item);
+      array_push($authors_arr, $author_item);
     }
 
     // Turn to JSON & output
-    echo json_encode($cat_arr);
+    echo json_encode($authors_arr);
 
   } else {
     // No Authors
