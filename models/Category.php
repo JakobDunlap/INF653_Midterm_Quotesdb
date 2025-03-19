@@ -110,7 +110,8 @@
       // Execute query
       if($stmt->execute()) {
         echo json_encode(
-          array('id' => $this->conn->lastInsertId())
+          array('id' => $this->conn->lastInsertId(),
+                'category' => $this->category)
         );
         return true;
       }
